@@ -21,6 +21,6 @@ class LostFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvLost.adapter =
+        binding.rvLost.adapter = null //Cambiar el adapter
     }
 }
