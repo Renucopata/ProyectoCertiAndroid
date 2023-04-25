@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.first.mascotapp.R
+import com.first.mascotapp.adapters.ServicesAdapter
 import com.first.mascotapp.databinding.FragmentServicesBinding
 
 class ServicesFragment : Fragment() {
@@ -26,7 +27,7 @@ class ServicesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvServices.adapter =
+        binding.rvServices.adapter = ServicesAdapter(images)
 
     }
 }
