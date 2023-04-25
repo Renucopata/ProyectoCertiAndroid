@@ -10,75 +10,58 @@ object BotResponse {
 
     fun basicResponses(_message: String): String {
 
-        val random = (0..2).random()
+        val random = (0..1).random()
         val message =_message.toLowerCase()
 
         return when {
 
-            //Flips a coin
-            message.contains("flip") && message.contains("coin") -> {
-                val r = (0..1).random()
-                val result = if (r == 0) "heads" else "tails"
-
-                "I flipped a coin and it landed on $result"
-            }
-
-            //Math calculations
-            message.contains("solve") -> {
-                val equation: String? = message.substringAfterLast("solve")
-                return try {
-                    val answer = SolveMath.solveMath(equation ?: "0")
-                    "$answer"
-
-                } catch (e: Exception) {
-                    "Sorry, I can't solve that."
-                }
-            }
-
-            //Hello
-            message.contains("hello") -> {
+            //Hola
+            message.contains("hola") -> {
                 when (random) {
-                    0 -> "Hello there!"
-                    1 -> "Sup"
-                    2 -> "Buongiorno!"
+                    0 -> "¡Gracias por contactarnos!"
+                    1 -> "Gracias por ponerte en contacto con nosotros."
                     else -> "error" }
             }
 
-            //How are you?
-            message.contains("how are you") -> {
+            //Veterinarias
+            message.contains("me podrias dar nombres de veterinarias?") -> {
                 when (random) {
-                    0 -> "I'm doing fine, thanks!"
-                    1 -> "I'm hungry..."
-                    2 -> "Pretty good! How about you?"
-                    else -> "error"
-                }
+                    0 -> "Claro, puedo darte nombres de veterinarias. Aquí te tengo algunas: Clinica Veterinaria Kiltros, Clínica veterinaria Doberman, Clínica Veterinaria America"
+                    1 -> "¡Claro! Algunas de las veterinarias son: Clinica Veterinaria Kiltros, Clínica veterinaria Doberman, Clínica Veterinaria America"
+                    else -> "error" }
             }
 
-            //What time is it?
-            message.contains("time") && message.contains("?")-> {
-                val timeStamp = Timestamp(System.currentTimeMillis())
-                val sdf = SimpleDateFormat("dd/MM/yyyy HH:mm")
-                val date = sdf.format(Date(timeStamp.time))
-
-                date.toString()
+            //Tiendas
+            message.contains("me podrias dar nombres de tiendas?") -> {
+                when (random) {
+                    0 -> "Claro, puedo darte nombres de tiendas. Aquí te tengo algunas: Animall, Jach'a Pet, Super Mercado de Mascotas"
+                    1 -> "¡Claro! Algunas de las tiendas son: Animall, Jach'a Pet, Super Mercado de Mascotas"
+                    else -> "error" }
             }
 
-            //Open Google
-            message.contains("open") && message.contains("google")-> {
+            //Gracias
+            message.contains("gracias") -> {
+                when (random) {
+                    0 -> "¡De nada! Recuerda que puedes utilizar nuestro chatbot para buscar información en Google o abrir Google directamente desde aquí si lo necesitas."
+                    1 -> "¡De nada! También puedes utilizar nuestro chatbot para buscar información en Google o abrir Google directamente desde aquí si lo necesitarás."
+                    else -> "error" }
+            }
+
+            //Abrir Google
+            message.contains("abrir") && message.contains("google")-> {
                 OPEN_GOOGLE
             }
 
-            //Search on the internet
-            message.contains("search")-> {
+            //Búsqueda en Internet
+            message.contains("buscar")-> {
                 OPEN_SEARCH
             }
 
-            //When the programme doesn't understand...
+            //Cuando el programa no lo entiende
             else -> {
                 when (random) {
-                    0 -> "I don't understand..."
-                    1 -> "Try asking me something different"
-                    2 -> "Idk"
+                    0 -> "No entiendo."
+                    1 -> "Intenta preguntarme algo diferente."
                     else -> "error"
                 }
             }

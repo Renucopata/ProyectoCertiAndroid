@@ -21,12 +21,10 @@ import kotlinx.coroutines.*
 
 class ChatBotFragment : Fragment() {
 
-    //You can ignore this messageList if you're coming from the tutorial,
-    // it was used only for my personal debugging
     var messagesList = mutableListOf<Message>()
 
     private lateinit var adapter: MessagingAdapter
-    private val botList = listOf("Peter", "Francesca", "Luigi", "Igor")
+    private val botList = listOf("Ignacio", "Andrea", "Fernando", "Maria")
 
     private lateinit var btn_send: Button
     private lateinit var et_message: EditText
@@ -49,17 +47,17 @@ class ChatBotFragment : Fragment() {
         clickEvents()
 
         val random = (0..3).random()
-        customBotMessage("Hello! Today you're speaking with ${botList[random]}, how may I help?")
+        customBotMessage("¡Hola! Hoy está hablando con ${botList[random]}, ¿en qué puedo ayudarte?")
     }
 
     private fun clickEvents() {
 
-        //Send a message
+        //Enviar mensaje
         btn_send.setOnClickListener {
             sendMessage()
         }
 
-        //Scroll back to correct position when user clicks on text view
+        //Volver a la posición correcta cuando el usuario hace clic en la vista de texto
         et_message.setOnClickListener {
             GlobalScope.launch {
                 delay(100)
@@ -81,7 +79,7 @@ class ChatBotFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        //In case there are messages, scroll to bottom when re-opening app
+        //En caso de que haya mensajes, desplazar hasta la parte inferior al volver a abrir el chat
         GlobalScope.launch {
             delay(100)
             withContext(Dispatchers.Main) {
@@ -95,7 +93,7 @@ class ChatBotFragment : Fragment() {
         val timeStamp = Time.timeStamp()
 
         if (message.isNotEmpty()) {
-            //Adds it to our local list
+            //Se añade a la lista local
             messagesList.add(Message(message, Constants.SEND_ID, timeStamp))
             et_message.setText("")
 
@@ -110,23 +108,23 @@ class ChatBotFragment : Fragment() {
         val timeStamp = Time.timeStamp()
 
         GlobalScope.launch {
-            //Fake response delay
+            //Retraso de respuesta falso
             delay(1000)
 
             withContext(Dispatchers.Main) {
-                //Gets the response
+                //Obtener respuesta
                 val response = BotResponse.basicResponses(message)
 
-                //Adds it to our local list
+                //Se añade a la lista local
                 messagesList.add(Message(response, Constants.RECEIVE_ID, timeStamp))
 
-                //Inserts our message into the adapter
+                //Inserta el mensaje en el adaptador
                 adapter.insertMessage(Message(response, Constants.RECEIVE_ID, timeStamp))
 
-                //Scrolls us to the position of the latest message
+                //Desplazar a la posición del último mensaje
                 rv_messages.scrollToPosition(adapter.itemCount - 1)
 
-                //Starts Google
+                //Inicio Google
                 when (response) {
                     Constants.OPEN_GOOGLE -> {
                         val site = Intent(Intent.ACTION_VIEW)
