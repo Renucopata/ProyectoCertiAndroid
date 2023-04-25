@@ -6,4 +6,6 @@
     <string name="title_services">services</string>
     <string name="title_lost">lost</string>
     <string name="title_chat">chat</string>
+    <string name="mapAPIKey">AIzaSyCmwXRFkwpRQLzIOV_R9etYxapEgV3PqIM</string>
+
 </resources>
