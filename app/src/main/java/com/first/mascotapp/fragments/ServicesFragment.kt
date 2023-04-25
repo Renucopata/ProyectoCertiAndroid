@@ -39,6 +39,15 @@ class ServicesFragment : Fragment() {
         binding.btnVets.setOnClickListener {
             view.findNavController().navigate(R.id.vetsFragment)
         }
+        binding.btnTiendas.setOnClickListener {
+            view.findNavController().navigate(R.id.tiendasFragment)
+        }
+        binding.btnPelu.setOnClickListener {
+            view.findNavController().navigate(R.id.peluqueriasFragment)
+        }
+        binding.btnOtros.setOnClickListener {
+            view.findNavController().navigate(R.id.otrosFragment)
+        }
        // binding.rvServices.adapter = ServicesAdapter(images)
 
     }

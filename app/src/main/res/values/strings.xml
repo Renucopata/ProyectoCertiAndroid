@@ -6,6 +6,11 @@
     <string name="title_services">services</string>
     <string name="title_lost">lost</string>
     <string name="title_chat">chat</string>
+    <string name="veterinarios">Veterinarios</string>
+    <string name="Tiendas">Tiendas</string>
+    <string name="Peluqueria">Peluqueria</string>
+    <string name="Otros">Otros</string>
+    <string name="onlyPets">OnlyPets</string>
     <string name="mapAPIKey">AIzaSyCmwXRFkwpRQLzIOV_R9etYxapEgV3PqIM</string>
 
 </resources>

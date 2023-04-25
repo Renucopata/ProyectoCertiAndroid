@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.first.mascotapp.databinding.ItemServiceBinding
+import com.first.mascotapp.models.ServiceListItem
 
-class ServicesAdapter (private val images: List<String>) : RecyclerView.Adapter<ServicesAdapter.ViewHolder>() {
+class ServicesAdapter ( val serviceListItem: List<ServiceListItem>) : RecyclerView.Adapter<ServicesAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemServiceBinding.inflate(inflater, parent, false)
@@ -14,15 +15,15 @@ class ServicesAdapter (private val images: List<String>) : RecyclerView.Adapter<
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(images[position])
+        holder.bind(serviceListItem[position])
     }
 
-    override fun getItemCount(): Int = images.size
+    override fun getItemCount(): Int = serviceListItem.size
 
     inner class ViewHolder(private val binding: ItemServiceBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(imageUrl: String) {
-            binding.image = imageUrl
+        fun bind(imageUrl: ServiceListItem) {
+            binding.ser = imageUrl
 
         }
     }

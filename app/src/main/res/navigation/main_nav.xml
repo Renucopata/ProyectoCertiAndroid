@@ -30,5 +30,20 @@
         android:name="com.first.mascotapp.fragments.VetsFragment"
         android:label="fragment_vets"
         tools:layout="@layout/fragment_vets" />
+    <fragment
+        android:id="@+id/peluqueriasFragment"
+        android:name="com.first.mascotapp.fragments.PeluqueriasFragment"
+        android:label="PeluqueriasFragment"
+        tools:layout="@layout/fragment_peluquerias"/>
+    <fragment
+        android:id="@+id/tiendasFragment"
+        android:name="com.first.mascotapp.fragments.TiendasFragment"
+        android:label="TiendasFragment"
+        tools:layout="@layout/fragment_tiendas"/>
+    <fragment
+        android:id="@+id/otrosFragment"
+        android:name="com.first.mascotapp.fragments.OtrosFragment"
+        android:label="OtrosFragment"
+        tools:layout="@layout/fragment_otros"/>
 
 </navigation>
