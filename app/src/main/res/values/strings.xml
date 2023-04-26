@@ -12,5 +12,7 @@
     <string name="Otros">Otros</string>
     <string name="onlyPets">OnlyPets</string>
     <string name="mapAPIKey">AIzaSyCmwXRFkwpRQLzIOV_R9etYxapEgV3PqIM</string>
+    <string name="tiendas">Tiendas</string>
+    <string name="peluquerias">Peluquerias</string>
 
 </resources>
