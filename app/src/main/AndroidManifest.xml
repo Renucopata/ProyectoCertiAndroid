@@ -12,7 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_paw_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Mascotapp">
+        android:theme="@style/Theme.Mascotapp"
+        android:usesCleartextTraffic="true">
 
         <!--
              TODO: Before you run your application, you need a Google Maps API key.

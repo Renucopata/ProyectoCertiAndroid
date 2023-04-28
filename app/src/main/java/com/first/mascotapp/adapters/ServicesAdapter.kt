@@ -15,16 +15,16 @@ class ServicesAdapter ( val serviceListItem: List<ServiceListItem>) : RecyclerVi
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(serviceListItem[position])
+        //holder.bind(serviceListItem[position])
     }
 
     override fun getItemCount(): Int = serviceListItem.size
 
     inner class ViewHolder(private val binding: ItemServiceBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(imageUrl: ServiceListItem) {
+        /*fun bind(imageUrl: ServiceListItem) {
             binding.ser = imageUrl
 
-        }
+        }*/
     }
 }
