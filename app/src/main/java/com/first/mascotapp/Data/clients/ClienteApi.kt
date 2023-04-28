@@ -1,4 +1,4 @@
-package com.first.mascotapp
+package com.first.mascotapp.Data.clients
 
 import com.first.mascotapp.models.ServiceListItem
 import kotlinx.coroutines.flow.Flow
@@ -21,7 +21,7 @@ class ClienteApi {
 
     interface Api {
        @GET("services/list")
-        fun getStoresList(): Flow<List<ServiceListItem>>
+        fun getServicesList(): Flow<List<ServiceListItem>>
 
 
         @GET("services/{id}")
@@ -30,5 +30,9 @@ class ClienteApi {
     }
 
    val client = retrofit.create(Api::class.java)
+
+    fun getServiceList(): Flow<List<ServiceListItem>> {
+        return client.getServicesList()
+    }
 
 }
