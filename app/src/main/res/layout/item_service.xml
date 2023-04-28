@@ -1,7 +1,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
         <variable
             name="service"
             type="com.first.mascotapp.models.ServiceListItem" />
@@ -17,13 +16,18 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
-             />
+            android:src="@{service.coverImageUrl}" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-             />
+            android:text="@{service.name}" />
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{service.description}" />
 
     </LinearLayout>
 </layout>

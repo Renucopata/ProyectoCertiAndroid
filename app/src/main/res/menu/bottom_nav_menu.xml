@@ -9,7 +9,7 @@
         android:id="@+id/chatBotFragment"
         android:icon="@drawable/home_icon"
         android:title="@string/title_chat"/>
-
+ `
     <item
         android:id="@+id/trackingFragment"
         android:icon="@drawable/home_icon"
