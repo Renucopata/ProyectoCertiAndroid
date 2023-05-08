@@ -9,10 +9,13 @@ import android.os.Looper
 import android.view.Window
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.first.mascotapp.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE) // will hide the title
         supportActionBar?.hide() // hide the title bar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -24,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         } // enable full screen
-        setContentView(R.layout.activity_splash)
+        setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
