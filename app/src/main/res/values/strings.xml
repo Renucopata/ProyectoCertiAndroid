@@ -32,10 +32,5 @@
     <string name="facebookLogin">Continuar con Facebook</string>
     <string name="preguntaCuenta">¿Aún no tienes una cuenta?</string>
     <string name="login">Ingresar</string>
-    <string name="register_title">Datos de registro</string>
-    <string name="register_hint_email">Correo electronico</string>
-    <string name="register_hint_password_confirm">Ingrese nuevamente la contraseña</string>
-    <string name="register_wrong_passsword">Las contraseñas no coinciden</string>
-    <string name="register_button">Crear cuenta</string>
 
 </resources>
