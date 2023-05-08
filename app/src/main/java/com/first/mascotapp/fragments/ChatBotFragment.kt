@@ -16,10 +16,15 @@ import com.codepalace.chatbot.utils.Constants
 import com.codepalace.chatbot.utils.Time
 import com.first.mascotapp.R
 import com.first.mascotapp.adapters.MessagingAdapter
+import com.first.mascotapp.databinding.FragmentChatBotBinding
 import com.first.mascotapp.models.Message
 import kotlinx.coroutines.*
 
 class ChatBotFragment : Fragment() {
+
+    private var _binding:FragmentChatBotBinding? = null
+
+    private val binding get() = _binding!!
 
     //You can ignore this messageList if you're coming from the tutorial,
     // it was used only for my personal debugging
@@ -36,14 +41,15 @@ class ChatBotFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_chat_bot, container, false)
+        _binding = FragmentChatBotBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn_send = view.findViewById(R.id.btn_send)
-        et_message = view.findViewById(R.id.et_message)
-        rv_messages = view.findViewById(R.id.rv_messages)
+        btn_send = binding.btnSend
+        et_message = binding.etMessage
+        rv_messages = binding.rvMessages
         recyclerView()
 
         clickEvents()
