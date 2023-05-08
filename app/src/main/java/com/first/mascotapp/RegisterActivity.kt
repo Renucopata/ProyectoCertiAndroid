@@ -6,10 +6,14 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.first.mascotapp.databinding.ActivityRegisterBinding
+import com.first.mascotapp.databinding.ActivitySplashBinding
 
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRegisterBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE) // will hide the title
         supportActionBar?.hide() // hide the title bar
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -21,6 +25,6 @@ class RegisterActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         } // enable full screen
-        setContentView(R.layout.activity_register)
+        setContentView(binding.root)
     }
 }
