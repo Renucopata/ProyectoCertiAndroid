@@ -8,16 +8,13 @@ import com.first.mascotapp.models.ServiceListItem
 
 class ServicesAdapter ( val serviceListItem: List<ServiceListItem>) : RecyclerView.Adapter<ServicesAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemServiceBinding.inflate(inflater, parent, false)
-        return ViewHolder(binding)
+
+        return ViewHolder(ItemServiceBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val service = serviceListItem[position]
-        holder.binding.textViewName.text = service.name
-        holder.binding.textViewDescription.text = service.description
+        holder.binding.serviceModel = serviceListItem[position]
 
     }
 

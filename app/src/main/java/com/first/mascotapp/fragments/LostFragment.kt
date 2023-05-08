@@ -36,11 +36,7 @@ class LostFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvLost.adapter = LostAdapter(lostList)
-            // Con SafeArgs (recomendado)
-            //view.findNavController().navigate(ListFragmentDirections.actionListFragmentToDetailsFragment(it))
 
-            // Sin SafeArgs, no tiene el argumento
-            //view.findNavController().navigate(R.id.rvLost)
 
         binding.rvLost.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)

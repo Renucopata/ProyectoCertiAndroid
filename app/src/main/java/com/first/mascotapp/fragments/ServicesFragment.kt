@@ -13,16 +13,17 @@ import com.first.mascotapp.R
 import com.first.mascotapp.adapters.ServicesAdapter
 import com.first.mascotapp.databinding.FragmentServicesBinding
 import com.first.mascotapp.fragments.viewModels.ServicesViewModel
+import com.first.mascotapp.models.LostItemModel
+import com.first.mascotapp.models.ServiceListItem
 
 class ServicesFragment : Fragment() {
     lateinit var binding: FragmentServicesBinding
 
      val servicesViewModel: ServicesViewModel by activityViewModels()
-   /* private val images = listOf(
-        "https://example.com/image1.jpg",
-        "https://example.com/image2.jpg",
-        "https://example.com/image3.jpg"
-    )*/
+   val lostList : List<ServiceListItem> = listOf(
+       ServiceListItem("Semevet","Consulta general",R.drawable.semevet1),
+       ServiceListItem("Semevet","Especialidad",R.drawable.semevet1)
+   )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,7 +49,7 @@ class ServicesFragment : Fragment() {
         binding.btnOtros.setOnClickListener {
             view.findNavController().navigate(R.id.otrosFragment)
         }
-       // binding.rvServices.adapter = ServicesAdapter(images)
+
 
     }
 

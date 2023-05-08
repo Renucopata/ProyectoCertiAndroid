@@ -1,33 +1,64 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
         <variable
-            name="service"
+            name="serviceModel"
             type="com.first.mascotapp.models.ServiceListItem" />
     </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="407dp"
+        android:layout_height="350dp"
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        app:cardCornerRadius="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
-            android:src="@{service.coverImageUrl}" />
+            android:src="@{serviceModel.logo}" />
 
         <TextView
             android:id="@+id/textViewName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{service.name}" />
-        <TextView
-            android:id="@+id/textViewDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{service.description}" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:text="@{serviceModel.provider}"
+            android:textSize="50dp"/>
+        </LinearLayout>
 
-    </LinearLayout>
+            <TextView
+                    android:id="@+id/textViewDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:text="@{serviceModel.description}"
+                    android:layout_gravity="start"
+                    android:textSize="30dp"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                android:textSize="50dp"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </layout>
