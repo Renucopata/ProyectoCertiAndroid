@@ -20,8 +20,8 @@ class LostFragment : Fragment() {
 
     val lostList : List<LostItemModel> = listOf(
         LostItemModel("Mbaperro", "3 semanas", R.drawable.dog4),
-    LostItemModel("cony pony", "1 semana", R.drawable.dog5 ), LostItemModel("Napoleon", "4 semanas", R.drawable.dog6),
-    LostItemModel("Pastor", "5dias", R.drawable.pastordog), LostItemModel("Firulais", "2 dias", R.drawable.dog7)
+    LostItemModel("Thor", "1 semana", R.drawable.thorperro ), LostItemModel("Napoleon", "4 semanas", R.drawable.dog6),
+    LostItemModel("Pastor", "5dias", R.drawable.pastordog), LostItemModel("ConyPony", "2 dias", R.drawable.dog7)
     )
 
     override fun onCreateView(

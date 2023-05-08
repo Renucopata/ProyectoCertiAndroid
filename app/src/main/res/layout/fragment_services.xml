@@ -21,11 +21,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/otroslogo5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_btnPelu"
 
-        tools:src="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_btnPelu" />
 
     <TextView
         android:id="@+id/textView_btnOtros"
@@ -42,11 +42,11 @@
         android:id="@+id/btn_Tiendas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/petshoplogo1" />
 
     <TextView
         android:id="@+id/textView_btnTiendas"
@@ -63,11 +63,11 @@
         android:id="@+id/btn_Pelu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_btnVets"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/pelulogo3"/>
 
     <TextView
         android:id="@+id/textView_btnPelu"
@@ -107,13 +107,13 @@
         android:id="@+id/btn_Vets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
 
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_AppIcon"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/vetlogo5" />
 
     <TextView
         android:id="@+id/textView_btnVets"

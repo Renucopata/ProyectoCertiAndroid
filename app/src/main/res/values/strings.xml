@@ -14,5 +14,23 @@
     <string name="mapAPIKey">AIzaSyCmwXRFkwpRQLzIOV_R9etYxapEgV3PqIM</string>
     <string name="tiendas">Tiendas</string>
     <string name="peluquerias">Peluquerias</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="bienvenidos">Bienvenido a OnlyPets</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="register">Regístrate</string>
+    <string name="googleLogin">Continuar con Google</string>
+    <string name="facebookLogin">Continuar con Facebook</string>
+    <string name="preguntaCuenta">¿Aún no tienes una cuenta?</string>
+    <string name="login">Ingresar</string>
 
 </resources>
