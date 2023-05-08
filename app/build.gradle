@@ -40,7 +40,9 @@ android {
         jvmTarget = '1.8'
     }
     namespace 'com.first.mascotapp'
-
+    buildFeatures{
+        viewBinding = true
+    }
    
 }
 
