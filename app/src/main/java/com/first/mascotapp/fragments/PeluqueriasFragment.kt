@@ -6,25 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.first.mascotapp.R
+import com.first.mascotapp.adapters.ServicesAdapter
+import com.first.mascotapp.databinding.FragmentPeluqueriasBinding
 import com.first.mascotapp.databinding.FragmentVetsBinding
 import com.first.mascotapp.fragments.viewModels.ServicesViewModel
 import com.first.mascotapp.models.ServiceListItem
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PeluqueriasFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class PeluqueriasFragment : Fragment() { lateinit var binding: FragmentVetsBinding
+class PeluqueriasFragment : Fragment() {
+    lateinit var binding: FragmentPeluqueriasBinding
 
     val servicesViewModel: ServicesViewModel by activityViewModels()
 
+
+    val serviceList : List<ServiceListItem> = listOf(
+        ServiceListItem("Semevet","Consulta general",R.drawable.semevet1),
+        ServiceListItem("Semevet","Especialidad",R.drawable.semevet1)
+    )
 
 
 
@@ -32,7 +32,7 @@ class PeluqueriasFragment : Fragment() { lateinit var binding: FragmentVetsBindi
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentVetsBinding.inflate(inflater, container, false)
+        binding = FragmentPeluqueriasBinding.inflate(inflater, container, false)
         binding.servicesViewModel = servicesViewModel
         binding.lifecycleOwner = this
         return binding.root
@@ -40,7 +40,11 @@ class PeluqueriasFragment : Fragment() { lateinit var binding: FragmentVetsBindi
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.rvPeluquerias.adapter = ServicesAdapter(serviceList)
 
+
+        binding.rvPeluquerias.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
     }
 
