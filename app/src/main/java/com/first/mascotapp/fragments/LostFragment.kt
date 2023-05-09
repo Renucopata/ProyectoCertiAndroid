@@ -15,13 +15,14 @@ import com.first.mascotapp.models.LostItemModel
 
 class LostFragment : Fragment() {
     lateinit var binding: FragmentLostBinding
+    val adapter = LostAdapter(listOf())
     val lostViewModel: LostViewModel by activityViewModels()
 
 
     val lostList : List<LostItemModel> = listOf(
-        LostItemModel("Mbaperro", "3 semanas", R.drawable.dog4),
-    LostItemModel("Thor", "1 semana", R.drawable.thorperro ), LostItemModel("Napoleon", "4 semanas", R.drawable.dog6),
-    LostItemModel("Pastor", "5dias", R.drawable.pastordog), LostItemModel("ConyPony", "2 dias", R.drawable.dog7)
+       // LostItemModel("Mbaperro", "3 semanas", R.drawable.dog4),
+    //LostItemModel("Thor", "1 semana", R.drawable.thorperro ), LostItemModel("Napoleon", "4 semanas", R.drawable.dog6),
+    //LostItemModel("Pastor", "5dias", R.drawable.pastordog), LostItemModel("ConyPony", "2 dias", R.drawable.dog7)
     )
 
     override fun onCreateView(
@@ -35,10 +36,17 @@ class LostFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvLost.adapter = LostAdapter(lostList)
-
-
+        binding.rvLost.adapter = adapter
+        lostViewModel.lostList.observe(viewLifecycleOwner){
+        adapter.itemList = it
+        adapter.notifyDataSetChanged()
+        }
         binding.rvLost.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        lostViewModel.getLostList(requireContext()){
+
+        }
+
+
     }
 }

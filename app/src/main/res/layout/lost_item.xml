@@ -32,10 +32,11 @@
                 android:layout_width="379dp"
                 android:layout_height="217dp"
 
-                android:src="@{lostListItem.imageResource}"
+                app:srcUrl="@{lostListItem.imageUrl}"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.571"
+                android:scaleType="centerCrop"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

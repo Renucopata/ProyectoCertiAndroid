@@ -1,12 +1,11 @@
-package com.first.mascotapp.Data.clients
+package com.first.mascotapp.data.clients
 
-import com.first.mascotapp.models.ServiceListItem
+import com.first.mascotapp.models.LostItemModel
 import kotlinx.coroutines.flow.Flow
 import me.sianaki.flowretrofitadapter.FlowCallAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Url
 
 
 class ClienteApi {
@@ -20,19 +19,16 @@ class ClienteApi {
     //Como ultimo paso, definir una interfaz que exponga los metodos que tiene nuestro servidor mock, y crear una instancia de un cliente retrofit con ello, por ejemplo:
 
     interface Api {
-       @GET("services/list")
-        fun getServicesList(): Flow<List<ServiceListItem>>
+       @GET("lost/list")
+        fun getLostList(): Flow<List<LostItemModel>>
 
-
-        @GET("services/{id}")
-        fun getStoreById(@Url id: String): Flow<List<ServiceListItem>>
 
     }
 
    val client = retrofit.create(Api::class.java)
 
-    fun getServiceList(): Flow<List<ServiceListItem>> {
-        return client.getServicesList()
+    fun getLostList(): Flow<List<LostItemModel>> {
+        return client.getLostList()
     }
 
 }

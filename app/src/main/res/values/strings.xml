@@ -2,10 +2,10 @@
     <string name="app_name">OnlyPets</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_home">home</string>
-    <string name="title_services">services</string>
-    <string name="title_lost">lost</string>
-    <string name="title_chat">chat</string>
+    <string name="title_services">Incio</string>
+    <string name="title_maps">Encuentrame</string>
+    <string name="title_lost">Seccion de perdidos</string>
+    <string name="title_chat">ChatMilan</string>
     <string name="veterinarios">Veterinarios</string>
     <string name="Tiendas">Tiendas</string>
     <string name="Peluqueria">Peluqueria</string>

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.first.mascotapp.databinding.LostItemBinding
 import com.first.mascotapp.models.LostItemModel
 
-class LostAdapter (val itemList : List<LostItemModel>) : RecyclerView.Adapter<LostListViewHolder>() {
+class LostAdapter (var itemList : List<LostItemModel>) : RecyclerView.Adapter<LostListViewHolder>() {
 
 
     //Inflate the layout

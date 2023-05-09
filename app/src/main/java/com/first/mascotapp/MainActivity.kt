@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
             )
         } // enable full screen
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
