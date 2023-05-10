@@ -41,17 +41,40 @@ class RegisterActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString()
             val confirmPassword = binding.etConfirmPassword.text.toString()
 
+            // Validate the user name
+            if (userName.isEmpty() || userName.length < 6 || userName.length > 12 || Character.isDigit(userName[0])) {
+                Toast.makeText(this, "Please enter a valid user name (6-12 characters, no leading numbers)", Toast.LENGTH_SHORT).show()
+            }
+
+// Validate the email
+            else if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
+            }
+
+// Validate the password
+            else if (password.isEmpty() || password.length < 6 || !password.matches("^(?=.*[A-Z])(?=.*\\d).+$".toRegex())) {
+                Toast.makeText(this, "Please enter a valid password (at least 6 characters, 1 number, and 1 uppercase letter)", Toast.LENGTH_SHORT).show()
+            }
+
+// Validate the confirm password
+            else if (confirmPassword.isEmpty() || confirmPassword != password) {
+                Toast.makeText(this, "Please confirm your password", Toast.LENGTH_SHORT).show()
+            }
+
+// If all validations pass, handle the successful case here
+            else {
+                val user = User(userName,email,password)
+                viewModel.createUser(this,user,{
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                },{
+                    Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()
+                })
+            }
 
 
-            //TODO Validar todo
 
-            val user = User(userName,email,password)
-            viewModel.createUser(this,user,{
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-            },{
-                Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()
-            })
+
 
 
 

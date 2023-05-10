@@ -37,5 +37,6 @@
     <string name="register_hint_password_confirm">Ingrese nuevamente la contraseña</string>
     <string name="register_wrong_passsword">Las contraseñas no coinciden</string>
     <string name="register_button">Crear cuenta</string>
+    <string name="reservar_button">Agendar Cita</string>
 
 </resources>
