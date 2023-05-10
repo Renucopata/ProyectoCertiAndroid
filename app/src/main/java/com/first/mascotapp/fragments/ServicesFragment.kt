@@ -20,10 +20,7 @@ class ServicesFragment : Fragment() {
     lateinit var binding: FragmentServicesBinding
 
      val servicesViewModel: ServicesViewModel by activityViewModels()
-   val lostList : List<ServiceListItem> = listOf(
-       ServiceListItem("Semevet","Consulta general",R.drawable.semevet1),
-       ServiceListItem("Semevet","Especialidad",R.drawable.semevet1)
-   )
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

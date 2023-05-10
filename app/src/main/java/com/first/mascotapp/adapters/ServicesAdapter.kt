@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.first.mascotapp.databinding.ItemServiceBinding
 import com.first.mascotapp.models.ServiceListItem
 
-class ServicesAdapter ( val serviceListItem: List<ServiceListItem>) : RecyclerView.Adapter<ServicesAdapter.ViewHolder>() {
+class ServicesAdapter ( var serviceListItem: List<ServiceListItem>) : RecyclerView.Adapter<ServicesAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(ItemServiceBinding.inflate(LayoutInflater.from(parent.context),parent,false))

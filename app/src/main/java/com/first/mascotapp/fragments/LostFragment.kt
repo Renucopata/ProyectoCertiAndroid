@@ -19,11 +19,11 @@ class LostFragment : Fragment() {
     val lostViewModel: LostViewModel by activityViewModels()
 
 
-    val lostList : List<LostItemModel> = listOf(
+    /*val lostList : List<LostItemModel> = listOf(
        // LostItemModel("Mbaperro", "3 semanas", R.drawable.dog4),
     //LostItemModel("Thor", "1 semana", R.drawable.thorperro ), LostItemModel("Napoleon", "4 semanas", R.drawable.dog6),
     //LostItemModel("Pastor", "5dias", R.drawable.pastordog), LostItemModel("ConyPony", "2 dias", R.drawable.dog7)
-    )
+    )*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -20,8 +20,8 @@ class OtrosFragment : Fragment() {
 
     val servicesViewModel: ServicesViewModel by activityViewModels()
     val serviceList : List<ServiceListItem> = listOf(
-        ServiceListItem("Semevet","Consulta general",R.drawable.semevet1),
-        ServiceListItem("Semevet","Especialidad",R.drawable.semevet1)
+        //ServiceListItem("Semevet","Consulta general",R.drawable.semevet1),
+        //ServiceListItem("Semevet","Especialidad",R.drawable.semevet1)
     )
 
     override fun onCreateView(

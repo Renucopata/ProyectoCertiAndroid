@@ -20,11 +20,12 @@ class VetsFragment : Fragment() {
     lateinit var binding: FragmentVetsBinding
 
     val servicesViewModel: ServicesViewModel by activityViewModels()
+    val adapter = ServicesAdapter(listOf())
 
-    val serviceList : List<ServiceListItem> = listOf(
+    /*val serviceList : List<ServiceListItem> = listOf(
         ServiceListItem("Semevet","Consulta general",R.drawable.semevet1),
         ServiceListItem("Semevet","Especialidad",R.drawable.semevet1)
-    )
+    )*/
 
 
 
@@ -41,12 +42,16 @@ class VetsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvVets.adapter = ServicesAdapter(serviceList)
+        binding.rvVets.adapter = adapter
+        servicesViewModel.serviceList.observe(viewLifecycleOwner){
+            adapter.serviceListItem = it
+            adapter.notifyDataSetChanged()
+        }
 
 
         binding.rvVets.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
+        servicesViewModel.getServiceList(requireContext()){}
     }
 
 

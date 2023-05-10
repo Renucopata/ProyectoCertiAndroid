@@ -31,7 +31,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="8dp"
-            android:src="@{serviceModel.logo}" />
+            android:src="@{serviceModel.logoUrl}" />
 
         <TextView
             android:id="@+id/textViewName"
@@ -39,7 +39,7 @@
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:text="@{serviceModel.provider}"
-            android:textSize="50dp"/>
+            android:textSize="50sp"/>
         </LinearLayout>
 
             <TextView
@@ -49,14 +49,14 @@
                     android:padding="15dp"
                     android:text="@{serviceModel.description}"
                     android:layout_gravity="start"
-                    android:textSize="30dp"/>
+                    android:textSize="30sp"/>
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Button"
-                android:textSize="50dp"/>
+                android:textSize="50sp"/>
 
 
         </LinearLayout>

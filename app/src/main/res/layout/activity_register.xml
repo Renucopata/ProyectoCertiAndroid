@@ -125,6 +125,7 @@
                 android:layout_margin="20dp"
                 android:text="@string/register_wrong_passsword"
                 android:textColor="#F44336"
+                android:visibility="invisible"
                  />
         </LinearLayout>
     </ScrollView>

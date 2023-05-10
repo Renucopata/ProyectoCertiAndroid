@@ -1,6 +1,7 @@
 package com.first.mascotapp.data.clients
 
 import com.first.mascotapp.models.LostItemModel
+import com.first.mascotapp.models.ServiceListItem
 import kotlinx.coroutines.flow.Flow
 import me.sianaki.flowretrofitadapter.FlowCallAdapterFactory
 import retrofit2.Retrofit
@@ -22,6 +23,8 @@ class ClienteApi {
        @GET("lost/list")
         fun getLostList(): Flow<List<LostItemModel>>
 
+        @GET("service/list")
+        fun getServiceList(): Flow<List<ServiceListItem>>
 
     }
 
@@ -29,6 +32,10 @@ class ClienteApi {
 
     fun getLostList(): Flow<List<LostItemModel>> {
         return client.getLostList()
+    }
+
+    fun getServiceList(): Flow<List<ServiceListItem>> {
+        return client.getServiceList()
     }
 
 }

@@ -8,11 +8,16 @@ import android.view.Window
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Button
+import android.widget.Toast
+import androidx.activity.viewModels
 import com.first.mascotapp.databinding.ActivityMainBinding
 import com.first.mascotapp.databinding.ActivityRegisterBinding
+import com.first.mascotapp.fragments.viewModels.UserViewModel
+import com.first.mascotapp.models.User
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegisterBinding
+    val viewModel : UserViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE) // will hide the title
@@ -29,10 +34,31 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val createAccount: Button = findViewById(R.id.btnCreateAccount)
+        val createAccount: Button = binding.btnCreateAccount
         createAccount.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        val userName = binding.etUsername.text.toString()
+            val email = binding.etEmail.text.toString()
+            val password = binding.etPassword.text.toString()
+            val confirmPassword = binding.etConfirmPassword.text.toString()
+
+
+
+            //TODO Validar todo
+
+            val user = User(userName,email,password)
+            viewModel.createUser(this,user,{
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            },{
+                Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()
+            })
+
+
+
+
+
+
+
         }
     }
 }
