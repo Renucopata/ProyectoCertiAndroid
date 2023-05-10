@@ -38,5 +38,12 @@
     <string name="register_wrong_passsword">Las contraseñas no coinciden</string>
     <string name="register_button">Crear cuenta</string>
     <string name="reservar_button">Agendar Cita</string>
+    <string name="reservar_title">Datos de reserva</string>
+    <string name="owner_name">Nombre del dueño</string>
+    <string name="pet_name">Nombre de la mascota</string>
+    <string name="fecha">Fecha deseada</string>
+    <string name="hora">Hora deseada</string>
+    <string name="send_form_button">ENVIAR</string>
+    <string name="owner_id">Nro de carnet</string>
 
 </resources>

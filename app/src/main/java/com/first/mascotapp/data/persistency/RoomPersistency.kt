@@ -7,9 +7,10 @@ import androidx.room.RoomDatabase
 import com.first.mascotapp.models.LostItemModel
 import com.first.mascotapp.models.ServiceListItem
 import com.first.mascotapp.models.User
+import com.first.mascotapp.models.Reserva
 
 
-@Database(entities = [LostItemModel::class,ServiceListItem::class, User::class], version = 1)
+@Database(entities = [LostItemModel::class,ServiceListItem::class, User::class, Reserva::class], version = 1)
 
 abstract class RoomPersistency: RoomDatabase() {
 
@@ -18,6 +19,8 @@ abstract class RoomPersistency: RoomDatabase() {
     abstract fun serviceDao(): ServiceDao
 
     abstract fun usersDao(): UsersDao
+
+    abstract fun reservasDao(): ReservasDao
 
     companion object {
         var instance: RoomPersistency? = null

@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        resValue "string", "google_maps_api_key", "@string/mapAPIKey"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
@@ -46,6 +47,7 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.room:room-common:2.4.2'
 
     def nav_version = "2.5.3"
 

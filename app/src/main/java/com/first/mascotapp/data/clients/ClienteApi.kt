@@ -12,7 +12,7 @@ import retrofit2.http.GET
 class ClienteApi {
 
     val retrofit = Retrofit.Builder()
-        .baseUrl("http://192.168.0.6:8000/") // TODO: Aqui reemplazar por su IP de su server mock!
+        .baseUrl("http://192.168.1.177:8000/") // TODO: Aqui reemplazar por su IP de su server mock!
         .addCallAdapterFactory(FlowCallAdapterFactory.create()) // Requerido para utilizar flow para las llamadas asincronas
         .addConverterFactory(GsonConverterFactory.create()) // Requerido para la serializacion/deserializacion
         .build()
