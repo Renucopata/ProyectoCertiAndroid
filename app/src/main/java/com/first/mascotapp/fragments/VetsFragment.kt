@@ -55,7 +55,7 @@ class VetsFragment : Fragment(), ServicesAdapter.OnItemClickListener {
 
         binding.rvVets.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        servicesViewModel.getServiceList1(requireContext()){}
+        servicesViewModel.getServiceList(requireContext()){}
 
     }
 

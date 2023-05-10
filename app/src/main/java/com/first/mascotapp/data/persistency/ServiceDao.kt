@@ -14,12 +14,8 @@ interface ServiceDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveServiceList(newList: List<ServiceListItem>)
 
-    @Query("SELECT * FROM ServiceListItem WHERE serviceId LIKE 1%" +
-            "serviceId")
-    fun getServiceList1(): Flow<List<ServiceListItem>>
-    @Query("SELECT * FROM ServiceListItem WHERE serviceId LIKE 2%" +
-            "serviceId")
-    fun getServiceList2(): Flow<List<ServiceListItem>>
+    @Query("SELECT * FROM ServiceListItem")
+    fun getServiceList(): Flow<List<ServiceListItem>>
 
 
 }

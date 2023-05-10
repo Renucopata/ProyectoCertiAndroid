@@ -45,7 +45,7 @@ class PeluqueriasFragment : Fragment() {
 
         binding.rvPeluquerias.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        servicesViewModel.getServiceList2(requireContext()){}
+        servicesViewModel.getServiceList(requireContext()){}
     }
 
 }
