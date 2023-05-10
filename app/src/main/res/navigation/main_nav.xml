@@ -45,6 +45,11 @@
         android:name="com.first.mascotapp.fragments.OtrosFragment"
         android:label="OtrosFragment"
         tools:layout="@layout/fragment_otros"/>
+    <fragment
+        android:id="@+id/reservarFragment"
+        android:name="com.first.mascotapp.fragments.ReservarFragment"
+        android:label="ReservarFragment"
+        android:layout="@layout/fragment_reservar"/>
 
 
 </navigation>

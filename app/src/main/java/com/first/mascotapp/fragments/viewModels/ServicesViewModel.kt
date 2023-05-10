@@ -20,9 +20,26 @@ class ServicesViewModel: ViewModel() {
     val serviceRepository = ServicesRepository()
     val serviceList = MutableLiveData(listOf<ServiceListItem>())
 
-    fun getServiceList(context: Context, onError: () -> Unit) {
+    fun getServiceList1(context: Context, onError: () -> Unit) {
         viewModelScope.launch {
-            serviceRepository.getServiceList(context)
+            serviceRepository.getServiceList1(context)
+                .flowOn(Dispatchers.IO)
+                .catch {
+                    it.printStackTrace()
+                    onError()
+                }
+                .collect {
+                    serviceList.value = it
+                    println(it.toString())
+                }
+        }
+        viewModelScope.launch(Dispatchers.IO) {
+            serviceRepository.updateServiceList(context)
+        }
+    }
+    fun getServiceList2(context: Context, onError: () -> Unit) {
+        viewModelScope.launch {
+            serviceRepository.getServiceList2(context)
                 .flowOn(Dispatchers.IO)
                 .catch {
                     it.printStackTrace()

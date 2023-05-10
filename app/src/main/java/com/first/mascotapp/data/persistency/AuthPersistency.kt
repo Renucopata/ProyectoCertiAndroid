@@ -23,7 +23,7 @@ object AuthPersistency {
     }
     suspend fun saveReserva(context: Context, reserva: Reserva) {
         context.dataStore.edit { prefs ->
-            prefs[tokenKey] = reserva.idReserva
+            prefs[tokenKey] = reserva.id
         }
     }
 

@@ -40,6 +40,7 @@ class TiendasFragment : Fragment() {
         binding.rvTiendas.adapter = ServicesAdapter(serviceList)
 
 
+
         binding.rvTiendas.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 

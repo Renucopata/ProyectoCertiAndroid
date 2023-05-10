@@ -13,9 +13,13 @@ import kotlinx.coroutines.flow.first
 class ServicesRepository { //TODO conectar con la vista a traves de un view
     val cliente = ClienteApi()
 
-    fun getServiceList(context: Context):  Flow<List<ServiceListItem>>{
+    fun getServiceList1(context: Context):  Flow<List<ServiceListItem>>{
         val persistency = RoomPersistency.getInstance(context)
-        return persistency.serviceDao().getServiceList()
+        return persistency.serviceDao().getServiceList1()
+    }
+    fun getServiceList2(context: Context):  Flow<List<ServiceListItem>>{
+        val persistency = RoomPersistency.getInstance(context)
+        return persistency.serviceDao().getServiceList1()
     }
 
 
