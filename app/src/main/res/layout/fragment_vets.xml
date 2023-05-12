@@ -2,18 +2,18 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <data>
         <variable
             name="servicesViewModel"
             type="com.first.mascotapp.fragments.viewModels.ServicesViewModel" />
     </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.VetsFragment">
-
+    tools:context=".fragments.VetsFragment"
+    android:background="@drawable/pawsbackgrnd">
 
     <ImageView
         android:id="@+id/imageView_AppIcon2"
@@ -45,4 +45,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_AppIcon2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-    </layout>
+</layout>

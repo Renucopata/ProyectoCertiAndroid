@@ -6,7 +6,7 @@
     <string name="title_maps">Encuentrame</string>
     <string name="title_lost">Seccion de perdidos</string>
     <string name="title_chat">ChatMilan</string>
-    <string name="veterinarios">Veterinarios</string>
+    <string name="veterinarios">Veterinarias</string>
     <string name="Tiendas">Tiendas</string>
     <string name="Peluqueria">Peluqueria</string>
     <string name="Otros">Otros</string>
@@ -45,5 +45,6 @@
     <string name="hora">Hora deseada</string>
     <string name="send_form_button">ENVIAR</string>
     <string name="owner_id">Nro de carnet</string>
+    <string name="veterinaria1">Veterinaria Buen Pastor</string>
 
 </resources>

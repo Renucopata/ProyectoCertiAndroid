@@ -12,7 +12,8 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.PeluqueriasFragment">
+        tools:context=".fragments.PeluqueriasFragment"
+        android:background="@drawable/pawsbackgrnd">
 
 
         <ImageView
@@ -37,7 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvPeluquerias"
+            android:id="@+id/recyclerView"
             android:layout_width="409dp"
             android:layout_height="633dp"
             android:layout_marginTop="1dp"
